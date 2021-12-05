@@ -79,7 +79,7 @@ public class Container : MonoBehaviour
 
 
                 Transform childTransform = transform.GetChild(x + y * 9);
-                childTransform.transform.position = new Vector3(x * screenSpace / 14 + xOffset + screenSpace / 6, -(y * screenSpace / 14 + yOffset) + (screenSpace / 1.5f), 0);
+                childTransform.transform.position = new Vector3(x * 35 + xOffset + screenSpace / 6, -(y * 35 + yOffset) + (screenSpace / 1.5f), 0);
             }
         }
     }
