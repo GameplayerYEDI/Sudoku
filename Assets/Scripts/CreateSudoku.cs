@@ -10,11 +10,6 @@ public class CreateSudoku : MonoBehaviour
     public RemoveTiles remover;
     public Container sudoku;
 
-    private void Start()
-    {
-        Create(difficulty.difficulty);
-    }
-
     public void Create(byte difficulty)
     {
         sudoku.AssignAll(createSudoku(difficulty));

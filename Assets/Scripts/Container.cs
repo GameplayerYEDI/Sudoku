@@ -16,10 +16,24 @@ public static class Extensions
 
 public class Container : MonoBehaviour
 {
+
     public CreateSudoku create;
 
     public int[] grid = new int[81];
     public int[] originalGrid = new int[81];
+
+    public int screenSpace = (Screen.width + Screen.height) / 2;
+    int temp = 0;
+
+    private void Update()
+    {
+        screenSpace = (Screen.width + Screen.height) / 2;
+        if(temp == 0)
+        {
+            create.Create(create.difficulty.difficulty);
+            temp++;
+        }
+    }
 
     public void Assign(int value, int childIndex)
     {
@@ -50,8 +64,6 @@ public class Container : MonoBehaviour
 
     public void ResetTiles()
     {
-        int screenSpace = (Screen.width + Screen.height)/2;
-
         for (int y = 0; y<transform.childCount/9; y++)
         {
             for (int x = 0; x < transform.childCount / 9; x++)
@@ -79,7 +91,7 @@ public class Container : MonoBehaviour
 
 
                 Transform childTransform = transform.GetChild(x + y * 9);
-                childTransform.transform.position = new Vector3(x * 35 + xOffset + screenSpace / 6, -(y * 35 + yOffset) + (screenSpace / 1.5f), 0);
+                childTransform.transform.position = new Vector3(x * screenSpace/14 + xOffset + screenSpace / 6, -(y * screenSpace / 14 + yOffset) + (screenSpace / 1.5f), 0);
             }
         }
     }
