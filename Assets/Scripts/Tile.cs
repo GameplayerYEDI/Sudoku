@@ -24,10 +24,12 @@ public class Tile : MonoBehaviour
         if (!(value == 0))
         {
             text.text = value.ToString();
+            GetComponent<Image>().color = new Color(0.26f, 0.26f, 0.26f);
         }
         else
         {
             text.text = " ";
+            GetComponent<Image>().color = new Color(0.31f, 0.31f, 0.31f);
         }
     }
 
