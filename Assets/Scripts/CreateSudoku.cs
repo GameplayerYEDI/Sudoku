@@ -92,7 +92,7 @@ public class CreateSudoku : MonoBehaviour
     int[] SetOtherRow(int[] row, int rowNum)
     {
         int[] rowReturn = new int[9];
-        if ((rowNum == 4) || (rowNum == 7))         // Shift rows 4 and 7 by 1 instead of 3
+        if ((rowNum == 4) || (rowNum == 7))         // Shift rows 3 and 6 by positive 1 instead of 3
         {
             for (int i = 0; i < 9; i++)
             {
@@ -106,7 +106,7 @@ public class CreateSudoku : MonoBehaviour
                 }
             }
         }
-        else                                        // Shift other rows by 3
+        else                                        // Shift other rows by negative 3
         {
             for (int i = 0; i < 9; i++)
             {

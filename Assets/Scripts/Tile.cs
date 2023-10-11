@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
     public TMPro.TMP_Text text;
     public CreateSudoku create;
     public Difficulty difficulty;
+    public Container container;
     int value = 0;
     public int originalValue;
     public int index;
@@ -24,12 +25,12 @@ public class Tile : MonoBehaviour
         if (!(value == 0))
         {
             text.text = value.ToString();
-            GetComponent<Image>().color = new Color(0.26f, 0.26f, 0.26f);
+            GetComponent<Image>().color = new Color(90,90,90);
         }
         else
         {
             text.text = " ";
-            GetComponent<Image>().color = new Color(0.31f, 0.31f, 0.31f);
+            GetComponent<Image>().color = new Color(67,67,67);
         }
     }
 
@@ -38,6 +39,15 @@ public class Tile : MonoBehaviour
         originalValue = transform.parent.GetComponent<Container>().originalGrid[index];
         if(originalValue == 0)
         {
+            if(!(originalValue == 0))
+            {
+                GetComponent<Image>().color = new Color(90, 90, 90);
+            }
+            else
+            {
+                GetComponent<Image>().color = new Color(67, 67, 67);
+            }
+
             value++;
             if (value > 9)
             {
